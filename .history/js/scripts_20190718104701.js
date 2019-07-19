@@ -1,7 +1,5 @@
-//let us begin .....
-
 $.ajax({
-    url: 'https://randomuser.me/api/?results=12&nat=US',
+    url: 'https://randomuser.me/api/?results=12&lang=en',
     dataType: 'json',
     success: function (data) {
         console.log(data);
@@ -10,7 +8,7 @@ $.ajax({
 
             const picture = person.picture.large;
             const firstName = person.name.first;
-            const lastName = person.name.last;
+            const lastName = person.lastName;
             const email = person.email;
             const locCity = person.location.city;
             const locState = person.location.state;
@@ -32,27 +30,22 @@ $.ajax({
     }
 });
 
-
-function modalWindow(i) {
-
-    const picture = jsonData[i].picture.large;
-    const fName = jsonData[i].name.first;
-    const lName = jsonData[i].name.last;
-    const email = jsonData[i].email;
-    const city = jsonData[i].location.city.toUpperCase();
-    const street = jsonData[i].location.street.toUpperCase();
-    const state = jsonData[i].location.state.toUpperCase();
-    const postcode = jsonData[i].location.postcode;
-
-    const phone = jsonData[i].phone;
-    const dob = jsonData[i].dob.date.slice(0, 10);
+const picture = picture.large;
+const fName = name.first;
+const lName = name.last;
+const email = email;
+const locCity = location.city;
+const street = location.street;
+const locState =
+const cellNum = phone;
+const bthdy = dob.date;
 
 
 
 
-    const modWin =
+const modWin =
 
-        `<div class="modal-container">
+    `<div class="modal-container">
                 <div class="modal">
                     <button type="button" id="modal-close-btn" class="modal-close-btn"><strong>X</strong></button>
                     <div class="modal-info-container">
@@ -62,21 +55,13 @@ function modalWindow(i) {
                         <p class="modal-text cap">${city}</p>
                         <hr>
                         <p class="modal-text">${phone}</p>
-                        <p class="modal-text">${street}, ${city}, ${state} ${postcode} </p>
-                        <p class="modal-text">Birthday: ${dob}</p>
+                        <p class="modal-text">123 Portland Ave., Portland, OR 97204</p>
+                        <p class="modal-text">Birthday: 10/21/2015</p>
                     </div>
                 </div>`
 
+    
 
-    $('body').append(modWin);
-    $('#modal-close-btn').on('click', function () {
-        $('.modal-container').remove();
-    });
-};
 
-//$('body').append(modWin); positioning?
 
-$('#gallery').on('click', '.card', function () {
-    i = ($(this).index());
-    modalWindow(i);
-});
+

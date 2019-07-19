@@ -67,7 +67,7 @@ function modalWindow(i) {
                     </div>
                 </div>`
 
-
+    
     $('body').append(modWin);
     $('#modal-close-btn').on('click', function () {
         $('.modal-container').remove();

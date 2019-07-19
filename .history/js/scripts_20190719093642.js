@@ -1,4 +1,4 @@
-//let us begin .....
+//let jsonData
 
 $.ajax({
     url: 'https://randomuser.me/api/?results=12&nat=US',
@@ -33,6 +33,10 @@ $.ajax({
 });
 
 
+//console.log(jsonData);
+//jsonData = data.results;
+//jsonData.forEach(person => {
+//forEach(person => {
 function modalWindow(i) {
 
     const picture = jsonData[i].picture.large;
@@ -43,7 +47,7 @@ function modalWindow(i) {
     const street = jsonData[i].location.street.toUpperCase();
     const state = jsonData[i].location.state.toUpperCase();
     const postcode = jsonData[i].location.postcode;
-
+    
     const phone = jsonData[i].phone;
     const dob = jsonData[i].dob.date.slice(0, 10);
 
@@ -67,16 +71,24 @@ function modalWindow(i) {
                     </div>
                 </div>`
 
-
+    //document.getElementById("modal-close-btn").addEventListener("click, button ")
+    /*var x = document.getElementById("modal-container");
+    if (x.addEventListener) { // For all major browsers, except IE 8 and earlier
+        x.addEventListener("click", modWin);
+    } else if (x.attachEvent) { // For IE 8 and earlier versions
+        x.attachEvent("onclick", modWin);
+    }*/
     $('body').append(modWin);
     $('#modal-close-btn').on('click', function () {
         $('.modal-container').remove();
     });
-};
 
-//$('body').append(modWin); positioning?
 
-$('#gallery').on('click', '.card', function () {
-    i = ($(this).index());
-    modalWindow(i);
-});
+    //$('body').append(modWin);
+
+    $('#gallery').on('click', '.card', function () {
+        i = ($(this).index());
+        modalWindow(i);
+    });
+
+}

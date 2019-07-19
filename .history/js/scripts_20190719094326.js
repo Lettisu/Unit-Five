@@ -1,4 +1,4 @@
-//let us begin .....
+//let jsonData
 
 $.ajax({
     url: 'https://randomuser.me/api/?results=12&nat=US',
@@ -33,6 +33,10 @@ $.ajax({
 });
 
 
+//console.log(jsonData);
+//jsonData = data.results;
+//jsonData.forEach(person => {
+//forEach(person => {
 function modalWindow(i) {
 
     const picture = jsonData[i].picture.large;
@@ -67,14 +71,14 @@ function modalWindow(i) {
                     </div>
                 </div>`
 
-
+    
     $('body').append(modWin);
     $('#modal-close-btn').on('click', function () {
         $('.modal-container').remove();
     });
 };
 
-//$('body').append(modWin); positioning?
+//$('body').append(modWin);
 
 $('#gallery').on('click', '.card', function () {
     i = ($(this).index());

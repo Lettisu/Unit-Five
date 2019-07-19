@@ -1,4 +1,4 @@
-//let us begin .....
+//let jsonData
 
 $.ajax({
     url: 'https://randomuser.me/api/?results=12&nat=US',
@@ -33,26 +33,29 @@ $.ajax({
 });
 
 
-function modalWindow(i) {
+//console.log(jsonData);
+//jsonData = data.results;
+//jsonData.forEach(person => {
+//forEach(person => {
+function modal(x);
 
-    const picture = jsonData[i].picture.large;
-    const fName = jsonData[i].name.first;
-    const lName = jsonData[i].name.last;
-    const email = jsonData[i].email;
-    const city = jsonData[i].location.city.toUpperCase();
-    const street = jsonData[i].location.street.toUpperCase();
-    const state = jsonData[i].location.state.toUpperCase();
-    const postcode = jsonData[i].location.postcode;
-
-    const phone = jsonData[i].phone;
-    const dob = jsonData[i].dob.date.slice(0, 10);
-
+const picture = person.picture.large;
+const fName = person.name.first;
+const lName = person.name.last;
+const email = person.email;
+const city = person.location.city;
+const street = person.location.street;
+const state = person.location.state;
+const postcode = person.location.postcode;
+const phone = person.phone;
+const dob = person.dob.date.slice(0, 10);
 
 
 
-    const modWin =
 
-        `<div class="modal-container">
+const modWin =
+
+    `<div class="modal-container">
                 <div class="modal">
                     <button type="button" id="modal-close-btn" class="modal-close-btn"><strong>X</strong></button>
                     <div class="modal-info-container">
@@ -67,16 +70,23 @@ function modalWindow(i) {
                     </div>
                 </div>`
 
+//document.getElementById("modal-close-btn").addEventListener("click, button ")
+/*var x = document.getElementById("modal-container");
+if (x.addEventListener) { // For all major browsers, except IE 8 and earlier
+    x.addEventListener("click", modWin);
+} else if (x.attachEvent) { // For IE 8 and earlier versions
+    x.attachEvent("onclick", modWin);
+}*/
+$('body').append(modWin);
+$('#modal-close-btn').on('click', function () {
+    $('.modal-container').remove();
+});
 
-    $('body').append(modWin);
-    $('#modal-close-btn').on('click', function () {
-        $('.modal-container').remove();
-    });
-};
 
-//$('body').append(modWin); positioning?
+//$('body').append(modWin);
 
 $('#gallery').on('click', '.card', function () {
-    i = ($(this).index());
-    modalWindow(i);
+    x = ($(this).index());
+    modalWindow(x);
 });
+
