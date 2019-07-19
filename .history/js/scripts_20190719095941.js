@@ -1,9 +1,5 @@
 //let us begin .....
-function capital(str) {
-    return str.replace(/\w\S*/g, function (txt) {
-        return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
-    });
-}
+
 $.ajax({
     url: 'https://randomuser.me/api/?results=12&nat=US',
     dataType: 'json',
@@ -43,13 +39,13 @@ function modalWindow(i) {
     const fName = jsonData[i].name.first;
     const lName = jsonData[i].name.last;
     const email = jsonData[i].email;
-    const city = capital(jsonData[i].location.city);
-    const street = capital(jsonData[i].location.street);
-    const state = capital(jsonData[i].location.state);
+    const city = jsonData[i].location.city.toUpperCase();
+    const street = jsonData[i].location.street.toUpperCase();
+    const state = jsonData[i].location.state.toUpperCase();
     const postcode = jsonData[i].location.postcode;
+
     const phone = jsonData[i].phone;
-    let dob = jsonData[i].dob.date;
-    dob = dob.slice(5, 7) + "/" + dob.slice(8, 10) + "/" + dob.slice(0, 4)
+    const dob = jsonData[i].dob.date.slice(0, 10);
 
 
 

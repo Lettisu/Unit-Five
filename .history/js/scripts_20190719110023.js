@@ -43,9 +43,9 @@ function modalWindow(i) {
     const fName = jsonData[i].name.first;
     const lName = jsonData[i].name.last;
     const email = jsonData[i].email;
-    const city = capital(jsonData[i].location.city);
-    const street = capital(jsonData[i].location.street);
-    const state = capital(jsonData[i].location.state);
+     const city = capital(jsonData[i].location.city);
+     const street = capital(jsonData[i].location.street);
+     const state = capital(jsonData[i].location.state);
     const postcode = jsonData[i].location.postcode;
     const phone = jsonData[i].phone;
     let dob = jsonData[i].dob.date;
